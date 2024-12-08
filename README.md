@@ -1,8 +1,19 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=BDBDC8&height=150&section=header" width="100%" >
 
+<div align="center">
 
-# Newstock
+# 프로젝트에 대한 정보
+---
+
+### 1. 프로젝트 제목
+
 뉴스와 함께 하는 똑똑한 투자! “**NewStock**”
+
+### 2. 로고 및 이미지
+
+![image (21).png](Picture/blueLogo.png)
+
+### 3. 프로젝트 정보 🗂
 
 경제 뉴스로 투자 안목을 키우고, 모의 투자로 실전 감각까지 다지는 빅데이터 플랫폼
 
@@ -10,37 +21,26 @@
 
 `개발기간: 24.08.26 ~ 24.10.11 (7주)`
 
-![image (21).png](Picture/blueLogo.png)
+### 4. 배포 주소 🌐
 
+개발버전 : 1. 0. 0
 
-# 목차
-1. [서비스 소개](#-서비스-소개)
-2. [화면 소개](#-화면-소개)
-3. [기술 스택](#-기술-스택)
-4. [서비스 아키텍처](#-서비스-아키텍처)
-5. [프로젝트 산출물](#-프로젝트-산출물)
-6. [팀원 구성](#-팀원-구성)
+도메인: "newstock.info"
 
+</div>
+<div>
 
----
+## 프로젝트 소개 🛒
 
-# ✨ 서비스 소개
-![메인페이지](https://github.com/user-attachments/assets/db6ec033-055f-4520-9414-09c8921afdbf)
-## 기획 배경
+### 개요
+
+Newstock은 주식 투자와 경제 뉴스를 보다 쉽고 효율적으로 접근할 수 있는 빅데이터 기반의 투자 플랫폼입니다. 주식 시장에 관심 있는 사용자들이 방대한 뉴스와 시장 데이터를 손쉽게 분석하고, 모의 투자를 통해 실전 감각을 키울 수 있도록 설계되었습니다. 초보 투자자뿐만 아니라 경험이 있는 투자자들도 투자 인사이트를 얻을 수 있도록 다양한 기능을 제공합니다.
+
+### 기획 배경
 
 많은 투자자들이 주식 투자를 할 때 최신 경제 뉴스와 산업 동향을 참고하지만, 기존의 정보 제공 플랫폼은 정보가 지나치게 많고 비효율적으로 제공되는 경우가 많았습니다. 이를 해결하기 위해, 우리는 뉴스와 주식 정보를 하나의 플랫폼에서 통합하여 누구나 쉽게 이해하고 활용할 수 있도록 기획하였습니다.
 
-**AS-IS**
-- 뉴스 어쩌구저쩌구
-
-**TO-BE**
-- 투비 어쩌구 저쩌구
-
-### 타켓
-- 타겟층 적기
-
-
-
+</div>
 
 ## 주요기능 🔍
 
@@ -67,18 +67,8 @@
 
 </div>
 
-# 💻 화면 소개
-<details>
- <summary>📢 화면 소개</summary>
- <div markdonw="1">
-  
-![슬라이드1](https://github.com/user-attachments/assets/c96bc0e0-7cc8-42b7-83fa-5aea529b1ca3)
+## 기술 스택 📖
 
- </div>
-</details>
-
-
-# 🛠 기술 스택
 <div align="center">
 
 ### Frontend
@@ -115,151 +105,109 @@
 
 </div>
 
-## 1. 코스피 주식 정보
-![한투증 정보](https://github.com/user-attachments/assets/b85ea2b4-722f-4754-b1a7-1239c4e6d95d)
-### WebSocket
-> Websocket이란 ws 프로토콜을 기반으로 클라이언트와 서버 사이에 지속적인 양방향 연결 스트림을 만들어주는 기술입니다. 이는 stateless한 성질을 가지는 HTTP 일부 통신의 한계를 극복해 주는 것으로 서버는 클라이언트에 데이터를 실시간으로 전달할 수 있게 됩니다.
+## 아키텍쳐 📑
 
-### Redis
-> Redis는 주로 애플리케이션 캐시나 빠른 응답 속도를 가진 데이터베이스로 사용되는 오픈 소스 In-Memory NoSQL 저장소 입니다.
+<div align="center">
+  <img src="Picture/architecture.png" alt="Logo" width="300px"/>
+</div>
 
-### Spring Scheduler
-> Spring Scheduler는 특정 작업을 지정된 주기로 자동 실행하도록 설정할 수 있는 기능으로, 정기적인 데이터 업데이트와 관리 작업을 처리하는 데 유용합니다.
+## ERD
 
-### 조회 로직
+<div align="center">
+  <img src="" alt="Logo" width="300px"/>
+</div>
 
-1. **실시간 주식 정보 저장 및 갱신**
-  - 한국투자증권 웹소켓을 통해 서버가 실시간 주식 정보를 수신하여 Redis에 저장하고, 지속적으로 최신 상태로 갱신합니다.
+<div>
 
-2. **사용자 실시간 주식 정보 조회**
-  - 사용자는 서버와 연결된 웹소켓을 통해 Redis에 저장된 최신 주식 정보를 실시간으로 조회할 수 있습니다.
+## 웹사이트 NewStock
 
-3. **데이터 일관성 유지**
-  - 주식 시장 종료 시각(15:30)에 Spring Scheduler를 사용하여 Redis에 저장된 모든 주식 정보를 MySQL DB에 업데이트함으로써, 데이터의 영속성과 일관성을 유지합니다.
+<div align="center">
 
-4. **캐시 미스 처리**
-  - 사용자가 특정 주식 정보를 조회할 때 Redis에 해당 정보가 없을 경우, MySQL DB에서 데이터를 조회하여 Redis에 저장하고 사용자에게 제공하여 조회 성능을 향상시킵니다.
+### 온보딩(OnBoarding)
 
-## 2. 데이터 파이프라인 설계
-![데이터 파이프라인 아키텍처](https://github.com/user-attachments/assets/08b2de8c-e9df-4ad2-a865-5e826b153a7e)
+  <img src="Picture/on1.JPG" alt="Logo" width="300px"/>
 
-- 수집 데이터 : 5년치의 경제 시황 뉴스 및 종목 뉴스(2019.09.01 ~ 2024.10.12) - 약 10,000,000건
-- 데이터를 수집, 전처리, 적재의 전 과정을 워크플로우 Tool인 `Airflow`를 활용하여 수집
-### 2.1 Extract
-- Daum 경제 뉴스에서 5년치의 데이터(기간 : 2019.09.01 ~ 2024.10.12) 약 10,000,000개의 기사를 수집
-- 수집 뉴스
-  1. Daum 시황 뉴스(https://news.daum.net/breakingnews/economic)
-  2. 코스피 전 종목의 뉴스(https://finance.daum.net/quotes/A005930#news/stock)
-- 웹 스크레이핑을 통해 각 뉴스의 metadata와 최종 수집한 뉴스 데이터를 Data Lake로서 S3에 저장
+  <img src="Picture/on2.JPG" alt="Logo" width="300px"/>
 
-### 2.2 Transformation
-- 수집한 데이터는 별도의 전처리가 필요
-- 결과 : 원본 뉴스 10,005,177건 => 2,240,063건으로 약 77.5% 감소하여 저장 공간 절약 등 데이터베이스 관리 측면 효율을 높임
+  <img src="Picture/on3.JPG" alt="Logo" width="300px"/>
 
-#### 1. 중복되는 데이터 삭제
-- 문제
+  <img src="Picture/on4.JPG" alt="Logo" width="300px"/>
 
-  - 너무 짧은 내용의 뉴스 존재
-- 해결
-  - 500자 이하의 단문 뉴스는 제거
-  - 뉴스 제목을 기준으로 DBSCAN 군집화를 통하여 대표 군집의 뉴스만 추출하여 추출
+  <img src="Picture/on5.JPG" alt="Logo" width="300px"/>
 
-#### 2. 필요없는 데이터 삭제
-  - 경제 뉴스 시황을 분석하는 데 필요없는 데이터가 다수 존재(단순 광고, 인사이동 등)
-  - `ko-finbert-sc` 모델을 transfer-learning하여 불필요한 뉴스를 필터링하는 모델 훈련
-  - category
-    - 0 : 불필요한 뉴스
-    - 1 : 거시적인 경제
-    - 2 : 특정 기업에 관련된 뉴스
-
-
-#### 3. 감정분석
-- 경제 뉴스를 긍정, 중립, 부정으로 분류하기 위해서 금융 뉴스에 특화된 모델인 `KR-FinBERT-SC`를 활용
-- Title을 기준으로 감정분류 진행
-
-#### 4. 경제 뉴스 챗봇 활용하기 위한 Vectorization
-- RAG 기반 LLM을 활용하기 위해서 Embedding Vector화 필요
-- 뉴스 데이터의 텍스트의 양은 크기 때문에 200 token 기준으로 `chunked-embedding` 및 `mean-pooling` 작업을 통해 텍스트의 전체적인 의미를 잘 반영하면서도, 모델의 입력 길이 한계를 극복
-- embedding 사용 모델은 `ko-sroberta-multitask`을 활용
-
-### 2.3 Load
-- 수집한 데이터는 HBase 및 ElasticSearch에 저장
-- **HBase** : 실시간으로 유저에게 뉴스 데이터 등을 활용하기 위해 HDFS 대신 OLTP가 유리한 HBase 활용
-- **ElasticSearch** :  향후 뉴스 검색 기능 확장성을 염두해 두고 Vector Database로도 활용 가능하며 검색 기능에 특화된 ElasticSearch를 활용하였음.
-
-## 3. 완전 분산 처리 시스템(Fully-Distributed-System 구현)
-![분산처리시스템](https://github.com/user-attachments/assets/ba4de712-0843-4202-953d-c7e8c4b5ef8e)
-- GCP instance 5개를 통해 완전 분산 처리 시스템을 구축
-  - NameNode 2개, WorkerNode 3개
-  - 각각의 NameNode는 **Active-Standby** 구성을 통해 하나의 NameNode가 종료되어도 다른 NameNode가 작동하게 하는 고가용성(High Avaliability) 구현
-- 
-
-
-# 🎨 서비스 아키텍처
-- 수정하기
-![](https://i.imgur.com/yinPQjZ.png)
-
-
-- 사용자의 요청이 `nginx`의 `reverse proxy`를 이용하여 라우팅 됨.
-  - `/` 주소에 대해서 frontend page로 라우팅
-  - `/api` 주소에 대해서 backend api 요청`주황색` 라인에 대해서 `gitlab-runner`를 이용하여 자동 배포를 위한 `cicd` 구축
-  - `openvidu` 는 backend에서 사용자 인증 후에 `8443` 포트의 openvidu backend server에서 `token` 반환
-- `Jenkinsfile` 을 통한 깃허브, 깃랩 자동 CI/CD 구현
-
-# 📚 프로젝트 산출물
-
-## 1. Figma(https://ko.fm/7HO)
-![사르르-프로토타입](https://github.com/user-attachments/assets/4d057112-9fc5-4685-bb22-89094c2c223f)
-
-## 2. ERD
-![ERD](https://github.com/user-attachments/assets/a4abc0a0-c634-49ad-bb9f-0ac908a22fc4)
-
-## 3. 요구사항 명세서
-![요구사항명세서](https://github.com/user-attachments/assets/ab43c099-70f7-4f5b-bcd5-f5465ed09d0f)
-
-## 4. 시연 영상
-<details>
- <summary>📢 기능 GIF</summary>
- <div markdonw="1">
+  <img src="Picture/on6.JPG" alt="Logo" width="300px"/>
   
-### 뉴스
-![뉴스 조회](https://github.com/user-attachments/assets/693a2d11-7893-432f-b0de-b64fdfebde7d)
-### 3줄 요약
-![뉴스 3줄 요약](https://github.com/user-attachments/assets/606c9b8f-2c2d-4e93-94a5-d0cbc04fd307)
-### 실시간 주식
-![실시간 주식](https://github.com/user-attachments/assets/47b83be1-db0e-4f6a-a233-98dba04666b2)
-### 모의투자
-![모의투자 시연](https://github.com/user-attachments/assets/6ba45a95-e09b-43e1-9752-925b71df52cf)
-### 차트 분석
-![차트 분석](https://github.com/user-attachments/assets/3bb6bb4b-f9fb-4464-82b1-500fcdde59e8)
-### 유사도 검색
-![유사도 검색](https://github.com/user-attachments/assets/c7163cad-a366-4dcd-bdd5-9a685093d8c8)
+  <img src="Picture/on7.JPG" alt="Logo" width="300px"/>
 
- </div>
-</details>
+  <img src="Picture/on8.JPG" alt="Logo" width="300px"/>
 
-<details>
- <summary>📢 화면 소개</summary>
- <div markdonw="1">
+### 홈(Home)
+
+  <img src="Picture/home.JPG" alt="Logo" width="300px"/>
+
+### 주식(Stock)
+
+  <img src="Picture/stockMain.JPG" alt="Logo" width="300px"/>
+
+  <img src="Picture/allStock.JPG" alt="Logo" width="300px"/>
+
+  <img src="Picture/sectionStock.JPG" alt="Logo" width="300px"/>
+
+  <img src="Picture/stockDetail.JPG" alt="Logo" width="300px"/>
+
+  <img src="Picture/stockU.JPG" alt="Logo" width="300px"/>
   
-![뉴스](/uploads/ab5096b60567ca04b05ecd719cf30774/뉴스.mov)
+  <img src="Picture/stockCa.JPG" alt="Logo" width="300px"/>
 
-![주식](/uploads/18385272fa830f240fecda95a0421842/주식.mov)
+### 뉴스(News)
 
-![주식기능](/uploads/f64df2a8b6ee94f4084609f11f80ded9/주식기능.mov)
+  <img src="Picture/newsMain.JPG" alt="Logo" width="300px"/>
 
-![AI챗봇](/uploads/e99c36c40b962e669d6a6c5f5aff46be/AI챗봇.mov)
+  <img src="Picture/ecoNews.JPG" alt="Logo" width="300px"/>
 
-![온보딩](/uploads/b55f2dd157fb206baff49657789e88a5/온보딩.mov)
+  <img src="Picture/stockNews.JPG" alt="Logo" width="300px"/>
 
-![다크모드](/uploads/3c2d051ea54814748a7f371a155d8c41/다크모드.mov)
+### AI 챗봇(AIChatBot)
 
- </div>
-</details>
+  <img src="Picture/Chat.JPG" alt="Logo" width="300px"/>
 
+### 그 외 편의 기능
 
+### NewStock의 차별점 👍
 
-# 👨‍👨‍👧‍👦 팀원 구성
+</div>
+
+1. 뉴스와 모의 투자의 통합 플랫폼
+
+   - 대부분의 기존 플랫폼은 주식 정보와 경제 뉴스를 개별적으로 제공하거나, 단순한 정보 제공에 그치는 경우가 많습니다. Newstock은 경제 뉴스와 모의 투자를 하나의 플랫폼에서 통합하여 사용자들이 뉴스를 통해 투자 안목을 키우고, 모의 투자로 실전 감각을 다질 수 있도록 지원합니다.
+
+2. 감정 분석을 통한 뉴스 평가
+
+   - 기존의 뉴스 제공 서비스는 뉴스의 양과 범위가 방대하여 사용자가 중요한 정보를 가려내기 어려운 경우가 많습니다. Newstock은 뉴스에 대한 감정 분석을 적용하여 각 뉴스가 긍정적인지 부정적인지 평가하고, 이를 통해 사용자들이 뉴스의 투자 가치를 직관적으로 판단할 수 있도록 돕습니다.
+
+3. AI 기반 차트 검색 및 유사도 분석
+
+   - 일반적인 모의 투자 서비스는 기본적인 거래 기능에 국한되어 있지만, Newstock은 AI 기반 차트 검색과 유사도 분석을 제공하여 보다 정교한 투자 전략 수립을 지원합니다. 사용자가 설정한 기간의 뉴스와 시황을 자동으로 분석하고 요약해주며, 과거 주가 패턴과 유사한 차트를 탐색해 투자 전략에 참고할 수 있도록 합니다.
+
+4. 실시간 데이터 처리와 분산 시스템 도입
+
+   - Newstock은 HDFS와 Spark 등 분산 처리 시스템을 활용하여 대량의 뉴스와 주가 데이터를 실시간으로 빠르게 처리합니다. 이로 인해 기존 RDBMS 기반 시스템보다 더욱 신속하고 안정적으로 데이터를 제공할 수 있습니다.
+
+5. 다양한 편의 기능과 게이미피케이션 요소
+
+   - Newstock은 투자자들이 더 효율적으로 플랫폼을 사용할 수 있도록 스크랩 기능, AI 챗봇, 랭킹 시스템 등 다양한 편의 기능을 제공하며, 게이미피케이션 요소를 통해 사용자가 모의 투자를 즐기면서 실전 감각을 키울 수 있도록 유도합니다.
+
+## 시연 영상
+
+<div align="center">
+
+### NewStock 영상
+
+[![NewStock Web]()]()
+
+</div>
+
+## 팀 소개 및 역할 👨‍👨‍👦
 
 <table>
   <tbody>
